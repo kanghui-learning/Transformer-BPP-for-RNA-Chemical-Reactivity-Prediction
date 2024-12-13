@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  dev:
+    shm_size: "128gb"
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        UID: ${UID}
+    tty: true
+    runtime: nvidia  # 明确指定 NVIDIA 运行时
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # 显示所有 GPU
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility  # 支持计算和工具
+    volumes:
+      - .:/work
+    working_dir: /work
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+    # Jupyter
+    ports:
+      - "8888:8888"

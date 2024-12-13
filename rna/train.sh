@@ -1,0 +1,5 @@
+python 02_train.py trainer.accelerator=gpu trainer.devices=-1 trainer.strategy=ddp trainer.precision=16 data.num_workers=5 task.sn_th=0.5 wandb.name=fold0 data.fold_id=0 model.arch=transformer_without_bpp
+python 02_train.py trainer.accelerator=gpu trainer.devices=-1 trainer.strategy=ddp trainer.precision=16 data.num_workers=5 task.sn_th=0.5 wandb.name=fold1 data.fold_id=1 model.arch=transformer_without_bpp
+python 02_train.py trainer.accelerator=gpu trainer.devices=-1 trainer.strategy=ddp trainer.precision=16 data.num_workers=5 task.sn_th=0.5 wandb.name=fold2 data.fold_id=2 model.arch=transformer_without_bpp
+python 02_train.py trainer.accelerator=gpu trainer.devices=-1 trainer.strategy=ddp trainer.precision=16 data.num_workers=5 task.sn_th=0.5 wandb.name=fold3 data.fold_id=3 model.arch=transformer_without_bpp
+python 02_train.py trainer.accelerator=gpu trainer.devices=-1 trainer.strategy=ddp trainer.precision=16 data.num_workers=5 task.sn_th=0.5 wandb.name=fold4 data.fold_id=4 model.arch=transformer_without_bpp
