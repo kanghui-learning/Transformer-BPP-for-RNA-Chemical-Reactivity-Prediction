@@ -1,10 +1,4 @@
-# Stanford Ribonanza RNA Folding 4th Place Solution (yu4u's Part)
-
-This is the implementation of the 4th place solution (yu4u's part) for [Stanford RiboNanza RNA Folding Competition](https://www.kaggle.com/competitions/stanford-ribonanza-rna-folding) at Kaggle.
-The overall solution is described in [this discussion](https://www.kaggle.com/competitions/stanford-ribonanza-rna-folding/discussion/460203).
-The other implementations of our solution can be found in
-[here](https://github.com/tattaka/stanford-ribonanza-rna-folding-public) (by @tattaka)
-and [here](https://github.com/fuumin621/stanford-ribonanza-rna-folding-4th) (by @monnu).
+# Transformer with BPP Attention Bias
 
 ## Preparation
 - Download the competition dataset from [here](https://www.kaggle.com/c/stanford-ribonanza-rna-folding/data) and put them in `input` directory.
@@ -52,4 +46,7 @@ Create oof files for each fold (for weighted ensemble).
 ```shell
 python 03_test.py trainer.accelerator=gpu trainer.devices=[0] data.batch_size=256 data.num_workers=10 trainer.precision=16 model.resume_path=[PATH_TO_CHECKPOINT] data.fold_id=[FOLD_ID] task.oof=True
 ```
+
+## Acknowledgment
+This implementation is adapted from the [4th Place Solution for Kaggle Stanford Ribonanza RNA Folding](https://github.com/yu4u/kaggle-stanford-ribonanza-rna-folding-4th-place-solution) by [yu4u](https://github.com/yu4u).
 
